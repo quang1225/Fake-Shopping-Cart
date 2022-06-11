@@ -1,6 +1,6 @@
 # Shopping cart
 
-A React shopping card with fake data from Fake Store API ( fakestoreapi.com )
+A React, Typescript shopping card with fake data from Fake Store API (fakestoreapi.com)
 
 [Live Demo](https://fake-shopping-cart.quang.work) :point_left:
 
