@@ -101,10 +101,12 @@ const Header = () => {
 
   const initData = async () => {
     const lsToken = localStorage.getItem(lsNames.TOKEN) || '';
-
     await dispatch(setToken(lsToken));
     setInitTokenDone(true);
-    dispatch(getUserDetail());
+
+    if (lsToken) {
+      dispatch(getUserDetail());
+    }
   };
 
   useEffect(() => {
