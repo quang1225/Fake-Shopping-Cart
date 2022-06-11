@@ -1,4 +1,4 @@
-# Shopping cart
+# Fake Shopping cart
 
 A React, Typescript shopping card with fake data from Fake Store API (fakestoreapi.com)
 
