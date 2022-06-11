@@ -1,6 +1,6 @@
-# Shopping cart
+# Fake Shopping cart
 
-A React shopping card with fake data from Fake Store API ( fakestoreapi.com )
+A React, Typescript shopping card with fake data from Fake Store API (fakestoreapi.com)
 
 [Live Demo](https://fake-shopping-cart.quang.work) :point_left:
 
@@ -16,7 +16,7 @@ npm start
 ## Built with
 
 - [React](https://reactjs.org/)
-- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Redux Toolkit](https://redux-toolkit.js.org/) ( newest and recommended by Redux )
 - [Immer](https://immerjs.github.io/immer/)
 - [Typescript](https://www.typescriptlang.org/)
 - [ESlint](https://eslint.org/)
@@ -24,7 +24,7 @@ npm start
 - [styled-components](https://styled-components.com/)
 - [Fake Store API](https://fakestoreapi.com/)
 - [Prettier](https://prettier.io/)
-- [Husky](https://typicode.github.io/husky/)
-- [lint-staged](https://www.npmjs.com/package/lint-staged/)
+- [Husky](https://typicode.github.io/husky/) ( creating Git hooks to run commands (Prettier, lint-staged,...) and check errors before commiting )
+- [lint-staged](https://www.npmjs.com/package/lint-staged/) ( running ESlint only staged files )
 - [Figma](https://figma.com/)
 - [Material UI](https://mui.com/)
