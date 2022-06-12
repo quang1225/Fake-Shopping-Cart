@@ -14,6 +14,7 @@ const App = () => {
         <Main />
         <Footer />
       </BrowserRouter>
+
       <Cart />
       <ToastContainer />
     </>

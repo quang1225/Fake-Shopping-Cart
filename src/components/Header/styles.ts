@@ -4,6 +4,23 @@ import { Popover } from '@mui/material';
 
 export const HeaderWrapper = styled.header`
   background-color: ${({ theme }) => theme.colors.dark};
+
+  .mobile_cart_button {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .mobile_cart_button {
+      display: block;
+      position: fixed;
+      padding: 15px;
+      background: black;
+      bottom: 14px;
+      right: 14px;
+      border-radius: 40px;
+      transition: opacity 0.3s ease;
+    }
+  }
 `;
 
 export const Container = styled.div`

@@ -31,6 +31,8 @@ import {
 import UserPopContent from './UserPopContent';
 import SearchPopContent from './SearchPopContent';
 import { useMediaQuery } from '@mui/material';
+import { useInView } from 'src/hooks/useInView';
+import CartButton from './CartButton';
 
 const Header = () => {
   const { cart } = useAppSelector(appState => appState.shop);
@@ -45,11 +47,13 @@ const Header = () => {
   let searchButtonRef = useRef(null);
   let userButtonRef = useRef(null);
   let popupEl = useRef(null);
+  let cartIconRef = useRef(null);
   const isMobile = useMediaQuery(MOBILE_QUERY);
 
-  const sumCartQuantity = () => {
-    return cart.reduce((quantity, cartItem) => quantity + cartItem.quantity, 0);
-  };
+  const isHeaderCartInView = useInView(cartIconRef, {
+    threshold: 1,
+    rootMargin: '0px',
+  });
 
   const getCartLocal = () => {
     try {
@@ -171,14 +175,11 @@ const Header = () => {
           <AnimatedButton onClick={clickSearchButton} ref={searchButtonRef}>
             <GoSearch />
           </AnimatedButton>
-          <AnimatedButton onClick={() => dispatch(setIsCartOpen(true))}>
-            <FaShoppingCart />
-            {sumCartQuantity() > 0 ? (
-              <Quantity>{sumCartQuantity()}</Quantity>
-            ) : (
-              ''
-            )}
-          </AnimatedButton>
+
+          <div ref={cartIconRef}>
+            <CartButton />
+          </div>
+
           <UserButton onClick={clickUserButton} ref={userButtonRef}>
             {detail.id && detail.name.firstname[0] + detail.name.lastname[0]}
             {!detail.id && <FaUserAlt />}
@@ -212,6 +213,13 @@ const Header = () => {
         {popupType === headerPopupTypes.SEARCH && <SearchPopContent />}
         {popupType === headerPopupTypes.USER && <UserPopContent />}
       </CustomPopover>
+
+      <div
+        className="mobile_cart_button"
+        style={{ opacity: isHeaderCartInView ? 0 : 1 }}
+      >
+        <CartButton />
+      </div>
     </HeaderWrapper>
   );
 };

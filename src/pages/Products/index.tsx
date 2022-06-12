@@ -22,6 +22,7 @@ import CommonSelect from 'src/components/elements/CommonSelect';
 import { StyledMenuItem } from 'src/components/elements/CommonSelect/styles';
 import { CircularProgress, debounce } from '@mui/material';
 import CommonField from 'src/components/elements/CommonField';
+import CartButton from 'src/components/Header/CartButton';
 
 const Products = () => {
   const {
