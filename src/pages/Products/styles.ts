@@ -22,7 +22,7 @@ export const ProductsWrapper = styled.div`
   }
 
   @media (max-width: 480px) {
-    grid-template-columns: repeat(1, 36rem);
+    grid-template-columns: repeat(1, 44rem);
   }
 
   animation: fadeIn ease 2s;
